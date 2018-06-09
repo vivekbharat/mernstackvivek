@@ -1,3 +1,5 @@
-module.exports = {
-  mongoURI: "mongodb://vivek:vivek@ds135760.mlab.com:35760/socialdevconnector"
-};
+if (process.env.NODE_ENV === "production") {
+  module.exports = require("./keys_prod");
+} else {
+  module.exports = require("./keys_dev");
+}
